@@ -23,7 +23,12 @@ const numSorteado = document.getElementById('num');
 const corpoTabela = document.getElementById('tbody');
 const cabecalhoTabela = document.querySelector('thead');
 
-// Cria automaticamente o cabeçalho da tabela
+// Sorteia um número aleatório dentro da faixa
+function gerarNumero() {
+    return Math.floor(Math.random() * 75) + 1;
+}
+
+// Cria o cabeçalho da tabela
 function montarCabecalho() {
     const linhaCabecalho = document.createElement('tr');
     letras.forEach(letra => {
@@ -57,11 +62,6 @@ function atualizarTabela(letra, numero) {
     const celula = corpoTabela.rows[linha].cells[coluna];
     celula.textContent = numero;
     celula.className = 'preenchido';
-}
-
-// Sorteia um número aleatório dentro da faixa
-function gerarNumero() {
-    return Math.floor(Math.random() * 75) + 1;
 }
 
 // Descobre a letra correspondente ao número sorteado
